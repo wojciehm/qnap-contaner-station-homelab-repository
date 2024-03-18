@@ -1,8 +1,8 @@
 version: '3'
 services:
   portainer:
-    image: portainer/portainer:latest
-    container_name: portainer
+    image: portainer/portainer-ee:latest
+    container_name: portainer-1
     command: -H unix:///var/run/docker.sock
     ports:
       - "9443:9443"
