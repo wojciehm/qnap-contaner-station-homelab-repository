@@ -1,0 +1,30 @@
+version: '3'
+services:
+  app:
+    image: 'portainer/portainer:latest'
+    container_name: portainer
+    ports:
+      - '9000:9000'
+      - '8000:8000'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /share/CACHEDEV1_DATA/Container/portainer-ce/data:/data:rw
+    environment:
+      - DISABLE_IPV6=true
+    restart: on-failure
+    networks:
+      - qnet-static:
+          ipv4_address: 192.168.251.52
+          
+networks:
+  qnet-static:
+    driver: qnet
+    driver_opts:
+      iface: "eth4"
+    ipam:
+      driver: qnet
+      options:
+        iface: "eth4"
+      config:
+        - subnet: 192.168.0.0/16
+          gateway: 192.168.192.1
