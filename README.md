@@ -2,9 +2,8 @@
 
 ## Homelab deployments on QNAP
 - [Portainer](portainer.yaml)
-
-## Upcoming files
 - [Gitea](gitea.yaml)
+## Upcoming files
 - [Graylog](https://graylog.org/)
 - [Prometheus](https://prometheus.io/)
 - [Grafana](https://grafana.com/)
