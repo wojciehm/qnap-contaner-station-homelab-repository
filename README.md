@@ -2,8 +2,9 @@
 
 ## Homelab deployments on QNAP
 - [Portainer](portainer.yaml)
-- [Gitea](gitea.yaml)
+- ~~[Gitea](gitea.yaml)~~
 ## Upcoming files
+- [Forgejo](https://forgejo.org) as a Gitea replacement
 - [Graylog](https://graylog.org/)
 - [Prometheus](https://prometheus.io/)
 - [Grafana](https://grafana.com/)
