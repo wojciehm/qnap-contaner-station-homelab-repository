@@ -4,9 +4,9 @@
 - [Portainer](portainer.yaml)
 
 ## Upcoming files
-- Gitea
-- Graylog
-- Prometheus
-- Grafana
-- Elastic Stack
-- Bind9
+- [Gitea](https://gitea.com/)
+- [Graylog](https://graylog.org/)
+- [Prometheus](https://prometheus.io/)
+- [Grafana](https://grafana.com/)
+- [Bind9](https://www.isc.org/bind/) 
+- [Semaphore](https://www.semui.co/) 
