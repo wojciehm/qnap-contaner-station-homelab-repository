@@ -2,3 +2,11 @@
 
 ## Homelab deployments on QNAP
 - [Portainer](portainer.yaml)
+
+## Upcoming files
+- Gitea
+- Graylog
+- Prometheus
+- Grafana
+- Elastic Stack
+- Bind9
