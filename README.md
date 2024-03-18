@@ -4,7 +4,7 @@
 - [Portainer](portainer.yaml)
 
 ## Upcoming files
-- [Gitea](https://gitea.com/)
+- [Gitea](gitea.yaml)
 - [Graylog](https://graylog.org/)
 - [Prometheus](https://prometheus.io/)
 - [Grafana](https://grafana.com/)
