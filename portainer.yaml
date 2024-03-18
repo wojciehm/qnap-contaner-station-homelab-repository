@@ -1,21 +1,30 @@
-version: '3'
+version: '2'
 services:
-  app:
-    image: 'portainer/portainer:latest'
+  portainer:
+    image: portainer/portainer:latest
     container_name: portainer
+    command: -H unix:///var/run/docker.sock
     ports:
-      - '9000:9000'
-      - '8000:8000'
+      - "9000:9000"
+      - "8000:8000"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /share/CACHEDEV1_DATA/Container/portainer-ce/data:/data:rw
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "portainer_data:/data"
     environment:
-      - DISABLE_IPV6=true
-    restart: on-failure
+      # setting a timezone
+      TZ: "Europe/Berlin"
+      # setting of 2 secure, censorship-free and non-logging DNS servers
+      DNS1: "192.168.255.220"
+      DNS2: "1.1.1.1"
+      # we set an virtual host so we can reach the admin panel via the hostname 
+      VIRTUAL_HOST: "portainer.homelab01.wojcieh.lab"
     networks:
-      - qnet-static:
-          ipv4_address: 192.168.251.52
-          
+      qnet-static:
+        ipv4_address: 192.168.251.52
+    restart: unless-stopped
+volumes:
+  portainer_data:
+# here the network driver is configured.
 networks:
   qnet-static:
     driver: qnet
