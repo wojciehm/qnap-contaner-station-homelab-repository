@@ -4,6 +4,7 @@
 - [Portainer](portainer.yaml)
 - ~~[Gitea](gitea.yaml)~~
 ## Upcoming files
+- [BindplaneOP](bindplane.yaml) [Website](https://observiq.com/docs/getting-started/quickstart-guide)
 - [Forgejo](https://forgejo.org) as a Gitea replacement
 - [Graylog](https://graylog.org/)
 - [Prometheus](https://prometheus.io/)
