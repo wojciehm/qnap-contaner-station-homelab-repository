@@ -7,7 +7,7 @@ In my case I have following network setup.
 In order to specify interface option we need to login to our NAS via SSH and get existing interfaces ID.
 Simply run following command
 ```
-ip addr
+ifconfig | grep eth
 ```
 As you see on the screen we have following interfaces available.
 
