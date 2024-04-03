@@ -4,7 +4,6 @@ services:
   prometheus:
     container_name: monitoring-prometheus
     image: prom/prometheus
-    container_name: prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     ports:
