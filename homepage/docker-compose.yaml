@@ -10,7 +10,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations
     networks:
       qnet-static:
-        ipv4_address: 192.168.251.62
+        ipv4_address: 192.168.251.53
 networks:
   qnet-static:
     external: true
