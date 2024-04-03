@@ -1,16 +1,16 @@
 # This is a repository containing Homelab related Docker files ready to be used in Container Station.
 
+## QNAP network creation
+I described it in [QNAP Network](qnap-network/qnap-network.md) section as this is a prerequisite for use to use it later on with Portainer. 
+
 ## Homelab deployments on QNAP
-- [Portainer](portainer.yaml)
-- Speedtest
-- [BindplaneOP](bindplane.yaml)
-*The BindPlane Observability Pipeline simplifies the collection of telemetry with a single agent, standardizes around OpenTelemetry, and gives you the tools to slash your observability costs.*
-[Bindplane Website](https://observiq.com/docs/getting-started/quickstart-guide)
-- ~~[Gitea](gitea.yaml)~~
+- [Portainer](portainer/portainer.md)
+- [Speedtest](speedtest/) 
+- [BindplaneOP](bindplane/bindplane.md)
+- [Gitea](gitea/gitea.md)
+- [Prometheus](prometheus-grafana/prometheus-grafana.md)
 ## Upcoming files
 - [Drone](https://www.drone.io) with Gitea as CI/CD platform
 - [Graylog](https://graylog.org/)
-- [Prometheus](https://prometheus.io/)
-- [Grafana](https://grafana.com/)
-- [Bind9](https://www.isc.org/bind/) 
+- [CoreDNS](https://coredns.io/)
 - [Semaphore](https://www.semui.co/) 

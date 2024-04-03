@@ -26,7 +26,7 @@ services:
             - db
     db:
         container_name: speedtest-db
-        image: postgres:15
+        image: postgres:latest
         networks:
           qnet-static:
             ipv4_address: 192.168.251.60
