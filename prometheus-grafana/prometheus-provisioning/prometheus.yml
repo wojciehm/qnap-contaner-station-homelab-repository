@@ -3,3 +3,16 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['node_exporter_1:9100', 'node_exporter_2:9100']
+# ----------------------- Linux Targets -----------------------
+  - job_name: 'linux_servers'
+    static_configs:
+      - targets: 
+        - 'ansible.homelab01.wojcieh.lab:9100'  # Replace with your Linux host IP/hostname
+        - 'linux_node_2:9100'  # Add more targets as needed
+
+  # ----------------------- Windows Targets -----------------------
+  - job_name: 'windows_servers'
+    static_configs:
+      - targets: 
+        - 'windows_node_1:9182'  # Replace with your Windows host IP/hostname
+        - 'windows_node_2:9182'  # Add more targets as needed
