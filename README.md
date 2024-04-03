@@ -2,12 +2,13 @@
 
 ## Homelab deployments on QNAP
 - [Portainer](portainer.yaml)
+- Speedtest
 - [BindplaneOP](bindplane.yaml)
 *The BindPlane Observability Pipeline simplifies the collection of telemetry with a single agent, standardizes around OpenTelemetry, and gives you the tools to slash your observability costs.*
 [Bindplane Website](https://observiq.com/docs/getting-started/quickstart-guide)
 - ~~[Gitea](gitea.yaml)~~
 ## Upcoming files
-- [Forgejo](https://forgejo.org) as a Gitea replacement
+- [Drone](https://www.drone.io) with Gitea as CI/CD platform
 - [Graylog](https://graylog.org/)
 - [Prometheus](https://prometheus.io/)
 - [Grafana](https://grafana.com/)

@@ -7,7 +7,7 @@ scrape_configs:
   - job_name: 'linux_servers'
     static_configs:
       - targets: 
-        - 'ansible.homelab01.wojcieh.lab:9100'  # Replace with your Linux host IP/hostname
+        - '192.168.251.221:9100'  # Ansible
         - 'linux_node_2:9100'  # Add more targets as needed
 
   # ----------------------- Windows Targets -----------------------
