@@ -29,17 +29,3 @@ services:
 volumes:
   monitoring_prometheus_data:  # Named volume for Prometheus
   monitoring_grafana_data:     # Named volume for Grafana
-
-  # here the network driver is configured.
-networks:
-  qnet-static:
-    driver: qnet
-    driver_opts:
-      iface: "eth4"
-    ipam:
-      driver: qnet
-      options:
-        iface: "eth4"
-      config:
-        - subnet: 192.168.0.0/16
-          gateway: 192.168.192.1
