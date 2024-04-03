@@ -12,9 +12,9 @@ services:
       - monitoring_prometheus_data:/prometheus  # Volume for Prometheus data
     ports:
       - 9090:9090  # Expose Prometheus port 9090
-    #networks:
-    # qnet-static:
-    #  ipv4_address: 192.168.251.57      
+    networks:
+     qnet-static:
+      ipv4_address: 192.168.251.57      
   grafana:
     image: grafana/grafana:latest  # Use latest Grafana image
     container_name: monitoring-grafana
@@ -24,12 +24,24 @@ services:
       - monitoring_grafana_data:/var/lib/grafana # Volume for Grafana data
     ports:
       - 3000:3000  # Expose Grafana port 3000
-    #networks:
-     #qnet-static:
-     # ipv4_address: 192.168.251.58
+    networks:
+     qnet-static:
+      ipv4_address: 192.168.251.58
     depends_on:
       - prometheus  # Grafana depends on the Prometheus service
 
 volumes:
   monitoring_prometheus_data:  # Named volume for Prometheus
   monitoring_grafana_data:     # Named volume for Grafana
+networks:
+  qnet-static:
+    driver: qnet
+    driver_opts:
+      iface: "eth4"
+    ipam:
+      driver: qnet
+      options:
+        iface: "eth4"
+      config:
+        - subnet: 192.168.0.0/16
+          gateway: 192.168.192.1
