@@ -1,11 +1,11 @@
 # This is a repository containing Homelab related Docker files ready to be used in Container Station.
 
 ## QNAP network creation
-I described it in [QNAP Network](qnap-network/qnap-network.md) section as this is a prerequisite for use to use it later on with Portainer. 
+I described it in [QNAP Network](qnap-network/qnap-network.md) section how to use QNAP with its Container Station/Docker as this is a prerequisite for use to use it later on with Portainer.
 
 ## Homelab deployments on QNAP
 - [Portainer](portainer/portainer.md)
-- [Speedtest](speedtest/) 
+- [Speedtest](speedtest/speedtest.md) 
 - [BindplaneOP](bindplane/bindplane.md)
 - [Gitea](gitea/gitea.md)
 - [Prometheus](prometheus-grafana/prometheus-grafana.md)
