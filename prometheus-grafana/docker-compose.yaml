@@ -8,7 +8,7 @@ services:
       - --config.file=/etc/prometheus/prometheus.yml
     volumes:
       - ./prometheus-provisioning/prometheus.yml:/etc/prometheus/prometheus.yml  # Mount configuration file
-      - monitoring_prometheus_data:/prometheus
+      #- monitoring_prometheus_data:/prometheus
     ports:
       - 9090:9090  # Expose Prometheus port 9090
     restart: unless-stopped
