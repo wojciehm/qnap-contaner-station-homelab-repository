@@ -8,12 +8,14 @@ services:
       - --config.file=/etc/prometheus/prometheus.yml
     volumes:
       - ./prometheus-provisioning/prometheus.yml:/etc/prometheus/prometheus.yml  # Mount configuration file
-      #- monitoring_prometheus_data:/prometheus  # Volume for Prometheus data
+      - monitoring_prometheus_data:/prometheus
     ports:
       - 9090:9090  # Expose Prometheus port 9090
+    restart: unless-stopped
     networks:
      qnet-static:
       ipv4_address: 192.168.251.57      
+  
   grafana:
     image: grafana/grafana:latest  # Use latest Grafana image
     container_name: monitoring-grafana
@@ -23,6 +25,7 @@ services:
       - monitoring_grafana_data:/var/lib/grafana # Volume for Grafana data
     ports:
       - 3000:3000  # Expose Grafana port 3000
+    restart: unless-stopped
     networks:
      qnet-static:
       ipv4_address: 192.168.251.58
@@ -30,8 +33,10 @@ services:
       - prometheus  # Grafana depends on the Prometheus service
 
 volumes:
-  monitoring_prometheus_data:  # Named volume for Prometheus
-  monitoring_grafana_data:     # Named volume for Grafana
+  monitoring_prometheus_data:
+    driver: local  # Named volume for Prometheus
+  monitoring_grafana_data:  
+    driver: local   # Named volume for Grafana
 
 networks:
   qnet-static:
