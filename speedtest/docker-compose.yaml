@@ -7,7 +7,7 @@ services:
             - 8443:443
         networks:
           qnet-static:
-            ipv4_address: 192.168.251.59
+            ipv4_address: 192.168.251.61
         environment:
             - PUID=1000
             - PGID=1000
