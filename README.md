@@ -9,6 +9,7 @@ I described it in [QNAP Network](qnap-network/qnap-network.md) section how to us
 - [BindplaneOP](bindplane/bindplane.md)
 - [Gitea](gitea/gitea.md)
 - [Prometheus](prometheus-grafana/prometheus-grafana.md)
+- [Homepage](homepage/homepage.md)
 ## Upcoming files
 - [Drone](https://www.drone.io) with Gitea as CI/CD platform
 - [Graylog](https://graylog.org/)
