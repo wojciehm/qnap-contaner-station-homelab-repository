@@ -8,7 +8,7 @@ services:
       - --config.file=/etc/prometheus/prometheus.yml
       # - --storage.tsdb.retention.size=10GB
     volumes:
-      - ./prometheus-provisioning/prometheus.yml:/etc/prometheus/prometheus.yml  # Mount configuration file
+      #- ./prometheus-provisioning/prometheus.yml:/etc/prometheus/prometheus.yml  # Mount configuration file
       - monitoring_prometheus_data:/prometheus  # Volume for Prometheus data
     ports:
       - 9090:9090  # Expose Prometheus port 9090
