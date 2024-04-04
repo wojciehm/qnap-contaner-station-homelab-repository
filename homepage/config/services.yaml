@@ -29,7 +29,7 @@
         name:
         widget:
           type: calendar
-          firstDayInWeek: sunday
+          firstDayInWeek: monday
           view: monthly
           maxEvents: 5
           showTime: true
@@ -283,9 +283,9 @@
 
 - Networking:
     - Unifi Web Console:
-        href: {{HOMEPAGE_VAR_UNIFICONSOLE_DOMAIN}}
+        href: {{https://10.0.0.1/network/default/dashboard}}
         icon: unifi
-        description: Public network management
+        description: Unifi
     - Juniper Web Console:
         href: {{HOMEPAGE_VAR_JUNIPERCONSOLE_DOMAIN}}
         icon: /icons/juniper.png
