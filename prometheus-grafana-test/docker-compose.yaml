@@ -8,6 +8,9 @@ services:
       - prometheus_data:/prometheus
     ports:
       - 9090:9090
+    networks:
+     qnet-static:
+      ipv4_address: 192.168.251.57
   grafana:
     image: grafana/grafana-oss:latest
     volumes:
@@ -17,10 +20,15 @@ services:
       - grafana_data:/var/lib/grafana
     ports:
       - 3000:3000
-
+    networks:
+     qnet-static:
+      ipv4_address: 192.168.251.58
+    depends_on:
+      - prometheus  # Grafana depends on the Prometheus service
 volumes:
   prometheus_data:
   grafana_data:
+
 networks:
   qnet-static:
     external: true
