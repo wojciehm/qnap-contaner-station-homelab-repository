@@ -283,13 +283,13 @@
 
 - Networking:
     - Unifi Web Console:
-        href: {{https://10.0.0.1/network/default/dashboard}}
+        href: https://10.0.0.1/network/default/dashboard
         icon: unifi
         description: Unifi
-    - Juniper Web Console:
-        href: {{HOMEPAGE_VAR_JUNIPERCONSOLE_DOMAIN}}
-        icon: /icons/juniper.png
-        description: Trusted network management
+    - QNAP:
+        href: https://192.168.255.116:8443/cgi-bin/
+        icon: qnap
+        description: QNAP
         
 - System Automation:
     - Home Assistant:
