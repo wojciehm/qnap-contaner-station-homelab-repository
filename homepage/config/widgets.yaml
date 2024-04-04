@@ -6,7 +6,7 @@
     icon: /images/logo.png
 - greeting:
     text_size: md
-    text: Cloudchain Dashboard
+    text: wjcieh dashboard
     
 - datetime:
     text_size: xl

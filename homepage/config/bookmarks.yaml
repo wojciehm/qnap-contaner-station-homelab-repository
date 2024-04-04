@@ -19,35 +19,12 @@
     - Gmail:
         - abbr: GM
           href: https://gmail.com/
-    - Zoho Mail:
-        - abbr: ZM
-          href: https://www.zoho.com/mail/login.html/
+
 - Shopping:
     - Amazon:
         - abbr: AMZ
           href: https://amazon.ca/
-    - Ebay:
-        - abbr: EB
-          href: https://ebay.ca/
-    - Kijiji:
-        - abbr: KJJ
-          href: https://kijiji.ca/
-    - Phantom Cables:
-        - abbr: PC
-          href: https://phantomcables.com/
-    - Ubiquiti:
-        - abbr: UI
-          href: https://ca.store.ui.com/ca/en
-- Hobbies:
-    - RotorVillage:
-        - abbr: RV
-          href: https://rotorvillage.ca/
-    - Namebase:
-        - abbr: NB
-          href: https://www.namebase.io/register/9wjdvt
-    - Namebase Pro:
-        - abbr: NBP
-          href: https://www.namebase.io/register/9wjdvt
+
 - Development:
     - Github:
         - abbr: GH
