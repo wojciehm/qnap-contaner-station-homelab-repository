@@ -19,16 +19,3 @@ scrape_configs:
   static_configs:
   - targets:
     - localhost:9090
-# ----------------------- Linux Targets -----------------------
-  - job_name: 'linux_servers'
-    static_configs:
-      - targets: 
-        - '192.168.251.221:9100'  # Ansible
-        - 'linux_node_2:9100'  # Add more targets as needed
-
-  # ----------------------- Windows Targets -----------------------
-  - job_name: 'windows_servers'
-    static_configs:
-      - targets: 
-        - 'windows_node_1:9182'  # Replace with your Windows host IP/hostname
-        - 'windows_node_2:9182'  # Add more targets as needed
