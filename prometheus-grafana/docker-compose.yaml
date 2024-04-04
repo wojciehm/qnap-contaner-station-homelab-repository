@@ -36,6 +36,7 @@ services:
     container_name: monitoring-node-exporter
     image: prom/node-exporter:latest
     volumes:
+
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
       - /:/rootfs:ro
@@ -50,6 +51,7 @@ services:
     networks:
      qnet-static:
       ipv4_address: 192.168.251.59 
+
 volumes:
   prometheus_data:
   grafana_data:
