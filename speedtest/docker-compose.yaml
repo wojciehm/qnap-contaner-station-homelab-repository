@@ -23,7 +23,7 @@ services:
             - db
         networks:
           qnet-static:
-            ipv4_address: 192.168.251.80
+            ipv4_address: 192.168.251.90
     db:
         container_name: speedtest-tracker-db
         image: postgres:16
@@ -36,7 +36,7 @@ services:
             - speedtest-db:/var/lib/postgresql/data
         networks:
           qnet-static:
-            ipv4_address: 192.168.251.81
+            ipv4_address: 192.168.251.91
 volumes:
   speedtest-db:
 networks:
