@@ -2,6 +2,7 @@ version: '3'
 
 services:
   prometheus:
+    container_name: monitoring-prometheus
     image: prom/prometheus:latest
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
@@ -12,7 +13,9 @@ services:
     networks:
      qnet-static:
       ipv4_address: 192.168.251.57
+  
   grafana:
+    container_name: monitoring-grafana
     image: grafana/grafana-oss:latest
     volumes:
       - ./grafana/datasources:/etc/grafana/provisioning/datasources
@@ -28,9 +31,10 @@ services:
       ipv4_address: 192.168.251.58
     depends_on:
       - prometheus  # Grafana depends on the Prometheus service
+  
   node-exporter:
+    container_name: monitoring-node-exporter
     image: prom/node-exporter:latest
-    container_name: node-exporter
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
