@@ -5,6 +5,7 @@ services:
     image: prom/prometheus:latest
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+       - ./prometheus_targets:/etc/prometheus/file_sd  # Mount target files directory
       - prometheus_data:/prometheus
     ports:
       - 9090:9090
@@ -14,16 +15,37 @@ services:
   grafana:
     image: grafana/grafana-oss:latest
     volumes:
-      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
       - grafana_data:/var/lib/grafana
     ports:
       - 3000:3000
+    environment:
+      - GF_SECURITY_ADMIN_USER=grafana
+      - GF_SECURITY_ADMIN_PASSWORD=Frigidly-Tibia-Jump-Smith0
     networks:
      qnet-static:
       ipv4_address: 192.168.251.58
     depends_on:
       - prometheus  # Grafana depends on the Prometheus service
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - --path.procfs=/host/proc 
+      - --path.sysfs=/host/sys
+      - --collector.filesystem.ignored-mount-points 
+      - "^/(sys|proc|dev|host|etc)($|/)" 
+    ports:
+      - 9100:9100
+    restart: unless-stopped
+    networks:
+     qnet-static:
+      ipv4_address: 192.168.251.59 
 volumes:
   prometheus_data:
   grafana_data:
