@@ -12,7 +12,7 @@ services:
       - 9090:9090
     networks:
      qnet-static:
-      ipv4_address: 192.168.251.57
+      ipv4_address: 192.168.251.80
   
   grafana:
     container_name: monitoring-grafana
@@ -24,11 +24,12 @@ services:
     ports:
       - 3000:3000
     environment:
-      - GF_SECURITY_ADMIN_USER=grafana
+      - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=Frigidly-Tibia-Jump-Smith0
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,natel-discrete-panel,grafana-piechart-panel
     networks:
      qnet-static:
-      ipv4_address: 192.168.251.58
+      ipv4_address: 192.168.251.81
     depends_on:
       - prometheus  # Grafana depends on the Prometheus service
   
@@ -50,7 +51,7 @@ services:
     restart: unless-stopped
     networks:
      qnet-static:
-      ipv4_address: 192.168.251.59 
+      ipv4_address: 192.168.251.82 
 
 volumes:
   prometheus_data:

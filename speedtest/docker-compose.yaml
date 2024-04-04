@@ -1,26 +1,44 @@
-version: '3'
-
+version: '3.4'
 services:
-  prometheus:
-    image: prom/prometheus:latest
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-      - prometheus_data:/prometheus
-    ports:
-      - 9090:9090
-  grafana:
-    image: grafana/grafana-oss:latest
-    volumes:
-      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
-      - ./grafana/grafana.ini:/etc/grafana/grafana.ini 
-      - grafana_data:/var/lib/grafana
-    ports:
-      - 3000:3000
-
+    speedtest-tracker:
+        container_name: speedtest-tracker
+        ports:
+            - 8080:80
+            - 8443:443
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - DB_CONNECTION=pgsql
+            - DB_HOST=db
+            - DB_PORT=5432
+            - DB_DATABASE=speedtest_tracker
+            - DB_USERNAME=speedy
+            - DB_PASSWORD=password
+        volumes:
+            - /path/to/data:/config
+            - /path/to-custom-ssl-keys:/config/keys
+        image: lscr.io/linuxserver/speedtest-tracker:latest
+        restart: unless-stopped
+        depends_on:
+            - db
+        networks:
+          qnet-static:
+            ipv4_address: 192.168.251.80
+    db:
+        container_name: speedtest-tracker-db
+        image: postgres:16
+        restart: always
+        environment:
+            - POSTGRES_DB=speedtest_tracker
+            - POSTGRES_USER=speedy
+            - POSTGRES_PASSWORD=password
+        volumes:
+            - speedtest-db:/var/lib/postgresql/data
+        networks:
+          qnet-static:
+            ipv4_address: 192.168.251.81
 volumes:
-  prometheus_data:
-  grafana_data:
+  speedtest-db:
 networks:
   qnet-static:
     external: true
