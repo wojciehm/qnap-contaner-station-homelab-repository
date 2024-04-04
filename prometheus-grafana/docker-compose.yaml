@@ -6,7 +6,7 @@ services:
     image: prom/prometheus:latest
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-       - ./prometheus_targets:/etc/prometheus/file_sd  # Mount target files directory
+      - ./prometheus_targets:/etc/prometheus/file_sd  # Mount target files directory
       - prometheus_data:/prometheus
     ports:
       - 9090:9090
